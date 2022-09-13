@@ -1,9 +1,9 @@
 #!/bin/sh
 
 docker_run="docker run"
+run_zookeeper="$docker_run -d --name zookeeper --network kafka-network -p 2181:2181 -e ALLOW_ANONYMOUS_LOGIN=yes bitnami/zookeeper:$INPUT_ZOOKEEPER_VERSION"
+run_kafka="$docker_run -d --name kafka --network kafka-network -p 9092:9092 -e KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181 -e KAFKA_CFG_ADVERTISED_LISTENERS='CLIENT://kafka:29092,EXTERNAL://localhost:9092' -e KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP='CLIENT:PLAINTEXT,EXTERNAL:PLAINTEXT' -e KAFKA_CFG_LISTENERS='CLIENT://:29092,EXTERNAL://:9092' -e KAFKA_CFG_INTER_BROKER_LISTENER_NAME=CLIENT -e KAFKA_CFG_AUTO_CREATE_TOPICS_ENABLE=true bitnami/kafka:$INPUT_KAFKA_VERSION"
 
-run_zookeeper="$docker_run -d --name zookeeper -p $INPUT_ZOOKEEPER_PORT:2181 -e ALLOW_ANONYMOUS_LOGIN=yes bitnami/zookeeper:$INPUT_ZOOKEEPER_VERSION"
+docker network create kafka-network --driver bridge
 sh -c "$run_zookeeper"
-
-run_kafka="$docker_run -d --name kafka -p $INPUT_KAFKA_PORT:9092 -e KAFKA_BROKER_ID=1 -e KAFKA_CFG_LISTENERS=PLAINTEXT://:9092 -e KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://127.0.0.1:9092  -e ALLOW_PLAINTEXT_LISTENER=yes -e KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181 bitnami/kafka:$INPUT_KAFKA_VERSION"
 sh -c "$run_kafka"
