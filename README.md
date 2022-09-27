@@ -17,7 +17,7 @@ Basic:
   uses: candis/kafka-actions@v0.0.2
 ```
 
-Now you should be able to consume and publish messages to the Kafka broker running at `localhost:9092`
+Now you should be able to consume and publish messages to the Kafka broker running at `localhost:9092`.
 
 If you want to connect with a client from docker use port `29092`. For instance, to list the topics:
 
