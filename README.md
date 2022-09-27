@@ -15,6 +15,11 @@ Basic:
 ```yaml
 - name: Start Bitname Kafka
   uses: candis/kafka-actions@v0.0.2
+  # Optionally input values can be provided as follows:
+  with: 
+    kafka version: 3.2.0
+    zookeeper version: 3.7.1
+
 ```
 
 Now you should be able to consume and publish messages to the Kafka broker running at `localhost:9092`.
