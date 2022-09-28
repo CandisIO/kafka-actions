@@ -24,7 +24,7 @@ Basic:
 
 Now you should be able to consume and publish messages to the Kafka broker running at `localhost:9092`.
 
-If you want to connect with a client from docker use port `29092`. For instance, to list the topics:
+If you want to connect with a client from docker use port `29092`. For example, if you need to list the topics:
 
 ```bash
 docker run -it --rm --network gh-kafka-network \
@@ -34,7 +34,7 @@ docker run -it --rm --network gh-kafka-network \
 
 ### When running locally
 
-The following environment variables are required (as defined in the [action.yml](action.yaml) file.
+The following environment variables are required (as defined in the [action.yml](action.yaml) file).
 
 ```bash
 export INPUT_ZOOKEEPER_PORT=2181
