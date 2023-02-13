@@ -1,6 +1,6 @@
 name: 'Setup Bitnami Kafka'
 description: 'Setup Bitnami Kafka'
-author: 'bbccorp'
+author: 'candis'
 inputs:
   kafka version:
     description: 'Version of Bitnami Kafka to use'
