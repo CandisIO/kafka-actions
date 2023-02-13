@@ -34,7 +34,7 @@ docker run -it --rm --network gh-kafka-network \
 
 ### When running locally
 
-The following environment variables are required (as defined in the [action.yml](action.yaml) file).
+The following environment variables are required (as defined in the [action.yml](action.yml) file).
 
 ```bash
 export INPUT_ZOOKEEPER_PORT=2181
