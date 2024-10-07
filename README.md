@@ -2,7 +2,7 @@
 
 This [GitHub Action](https://github.com/features/actions) sets up Bitnami Kafka instance
 
-This project started as a a fork of https://github.com/bbcCorp/kafka-actions, and got adjusted to work with Kafka 3.2.0 and Zookeeper 2.8.1
+This project started as a a fork of <https://github.com/bbcCorp/kafka-actions>, and got adjusted to work with Kafka 3.2.0 and Zookeeper 2.8.1
 
 ---
 
