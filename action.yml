@@ -21,7 +21,11 @@ inputs:
   zookeeper port:
     description: 'The port of Zookeeper host'
     required: false
-    default: 2181    
+    default: 2181
+  build-args:
+    description: 'Additional build arguments to pass to Docker'
+    required: false
+    default: ''
 runs:
   using: 'docker'
   image: 'Dockerfile'
