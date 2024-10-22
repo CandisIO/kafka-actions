@@ -1,7 +1,7 @@
-ARG ACCOUNT_ID
-ARG REGION
+ARG accountId
+ARG region
 
-FROM ${ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com/docker:stable
+FROM ${accountId}.dkr.ecr.${region}.amazonaws.com/docker:stable
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
