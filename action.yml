@@ -21,7 +21,18 @@ inputs:
   zookeeper port:
     description: 'The port of Zookeeper host'
     required: false
-    default: 2181    
+    default: 2181
+  accountId:
+    description: 'Additional build arguments to pass to Docker'
+    required: true
+    default: ''
+  region:
+    description: 'Additional build arguments to pass to Docker'
+    required: true
+    default: ''
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args:
+    - ${{ inputs.accountId }}
+    - ${{ inputs.region }}
