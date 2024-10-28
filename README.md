@@ -6,6 +6,14 @@ This project started as a a fork of <https://github.com/bbcCorp/kafka-actions>, 
 
 ---
 
+## Publishing a new version
+
+After merging your changes create and push a versioned release. Example with version 1.1.0.
+
+```sh
+gh release create v1.1.0 --notes "this releases fixes many bugs"
+```
+
 ## Usage
 
 See [action.yml](action.yml)
