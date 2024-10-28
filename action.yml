@@ -1,27 +1,32 @@
-name: 'Setup Bitnami Kafka'
-description: 'Setup Bitnami Kafka'
-author: 'candis'
+name: "Setup Bitnami Kafka"
+description: "Setup Bitnami Kafka"
+author: "candis"
 inputs:
   kafka version:
-    description: 'Version of Bitnami Kafka to use'
+    description: "Version of Bitnami Kafka to use"
     required: false
-    default: 'latest'
+    default: "latest"
   zookeeper version:
-    description: 'Version of Bitnami Zookeeper to use'
+    description: "Version of Bitnami Zookeeper to use"
     required: false
-    default: 'latest'    
+    default: "latest"
   kafka port:
-    description: 'The port of Kafka host'
+    description: "The port of Kafka host"
     required: false
     default: 9092
   kafka client port:
-    description: 'The port for Kafka client connection'
+    description: "The port for Kafka client connection"
     required: false
     default: 29092
   zookeeper port:
-    description: 'The port of Zookeeper host'
+    description: "the port of zookeeper host"
     required: false
-    default: 2181    
+    default: 2181
+  container_cache_url:
+    description: "The URL of the container cache, if ommited images will be pulled from Docker Hub"
+    required: false
+    default: ""
+
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: "docker"
+  image: "Dockerfile"
