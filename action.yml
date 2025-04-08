@@ -1,27 +1,35 @@
-name: 'Setup Bitnami Kafka'
-description: 'Setup Bitnami Kafka'
-author: 'candis'
+name: "Setup Bitnami Kafka"
+description: "Setup Bitnami Kafka"
+author: "candis"
 inputs:
+  container image kafka:
+    description: "The container image to be used without the version, can be provided with the container repo or without it (assumes dockerhub by default). "
+    required: false
+    default: "public.ecr.aws/bitnami/kafka"
+  container image zookeeper:
+    description: "The container image to be used without the version, can be provided with the container repo or without it (assumes dockerhub by default). "
+    required: false
+    default: "public.ecr.aws/bitnami/zookeeper"
   kafka version:
-    description: 'Version of Bitnami Kafka to use'
+    description: "Version of Bitnami Kafka to use"
     required: false
-    default: 'latest'
+    default: "latest"
   zookeeper version:
-    description: 'Version of Bitnami Zookeeper to use'
+    description: "Version of Bitnami Zookeeper to use"
     required: false
-    default: 'latest'    
+    default: "latest"
   kafka port:
-    description: 'The port of Kafka host'
+    description: "The port of Kafka host"
     required: false
     default: 9092
   kafka client port:
-    description: 'The port for Kafka client connection'
+    description: "The port for Kafka client connection"
     required: false
     default: 29092
   zookeeper port:
-    description: 'The port of Zookeeper host'
+    description: "The port of Zookeeper host"
     required: false
-    default: 2181    
+    default: 2181
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: "docker"
+  image: "Dockerfile"
