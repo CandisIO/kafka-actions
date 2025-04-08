@@ -2,11 +2,10 @@
 set -exo pipefail
 
 KAFKA_NETWORK="gh-kafka-network"
-CONTAINER_REGISTRY="${INPUT_CONTAINER_REGISTRY}"
 docker network create ${KAFKA_NETWORK} --driver bridge
 
 echo "Running Zookeeper container"
-docker run -d --name zookeeper --network ${KAFKA_NETWORK} -p "${INPUT_ZOOKEEPER_PORT}:2181" -e ALLOW_ANONYMOUS_LOGIN=yes "${CONTAINER_REGISTRY}/bitnami/zookeeper:${INPUT_ZOOKEEPER_VERSION}"
+docker run -d --name zookeeper --network ${KAFKA_NETWORK} -p "${INPUT_ZOOKEEPER_PORT}:2181" -e ALLOW_ANONYMOUS_LOGIN=yes "${INPUT_CONTAINER_IMAGE_ZOOKEEPER}:${INPUT_ZOOKEEPER_VERSION}"
 
 echo "Running Kafka container"
 docker run -d --name kafka --network ${KAFKA_NETWORK} -p "${INPUT_KAFKA_PORT}:9092" \
@@ -17,4 +16,4 @@ docker run -d --name kafka --network ${KAFKA_NETWORK} -p "${INPUT_KAFKA_PORT}:90
   -e KAFKA_CFG_INTER_BROKER_LISTENER_NAME=CLIENT \
   -e KAFKA_CFG_AUTO_CREATE_TOPICS_ENABLE=true \
   -e KAFKA_CFG_OFFSETS_TOPIC_REPLICATION_FACTOR=1 \
-  -e ALLOW_PLAINTEXT_LISTENER=yes "${CONTAINER_REGISTRY}/bitnami/kafka:${INPUT_KAFKA_VERSION}"
+  -e ALLOW_PLAINTEXT_LISTENER=yes "${INPUT_CONTAINER_IMAGE_ZOOKEEPER}:${INPUT_KAFKA_VERSION}"

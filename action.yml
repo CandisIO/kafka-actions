@@ -2,10 +2,14 @@ name: "Setup Bitnami Kafka"
 description: "Setup Bitnami Kafka"
 author: "candis"
 inputs:
-  container_registry:
-    description: "The container registry to use, defaults to ecr public registry. "
+  container_image_kafka:
+    description: "The container image to be used without the version, can be provided with the container repo or without it (assumes dockerhub by default). "
     required: false
-    default: "public.ecr.aws"
+    default: "public.ecr.aws/bitnami/kafka"
+  container_image_zookeeper:
+    description: "The container image to be used without the version, can be provided with the container repo or without it (assumes dockerhub by default). "
+    required: false
+    default: "public.ecr.aws/bitnami/zookeeper"
   kafka version:
     description: "Version of Bitnami Kafka to use"
     required: false
