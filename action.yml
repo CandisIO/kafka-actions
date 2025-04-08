@@ -2,11 +2,11 @@ name: "Setup Bitnami Kafka"
 description: "Setup Bitnami Kafka"
 author: "candis"
 inputs:
-  container_image_kafka:
+  container image kafka:
     description: "The container image to be used without the version, can be provided with the container repo or without it (assumes dockerhub by default). "
     required: false
     default: "public.ecr.aws/bitnami/kafka"
-  container_image_zookeeper:
+  container image zookeeper:
     description: "The container image to be used without the version, can be provided with the container repo or without it (assumes dockerhub by default). "
     required: false
     default: "public.ecr.aws/bitnami/zookeeper"
