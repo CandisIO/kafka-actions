@@ -5,11 +5,11 @@ inputs:
   container image kafka:
     description: "The container image to be used without the version, can be provided with the container repo or without it (assumes dockerhub by default). "
     required: false
-    default: "public.ecr.aws/bitnami/kafka"
+    default: "public.ecr.aws/bitnamilegacy/kafka"
   container image zookeeper:
     description: "The container image to be used without the version, can be provided with the container repo or without it (assumes dockerhub by default). "
     required: false
-    default: "public.ecr.aws/bitnami/zookeeper"
+    default: "public.ecr.aws/bitnamilegacy/zookeeper"
   kafka version:
     description: "Version of Bitnami Kafka to use"
     required: false
