@@ -2,7 +2,7 @@
 
 This [GitHub Action](https://github.com/features/actions) sets up Bitnami Kafka instance
 
-This project started as a a fork of <https://github.com/bbcCorp/kafka-actions>, and got adjusted to work with Kafka 3.2.0 and Zookeeper 2.8.1
+This project started as a a fork of <https://github.com/bbcCorp/kafka-actions>, and got adjusted to work with Kafka 3.7.1 and Zookeeper 2.8.1
 
 ---
 
@@ -17,7 +17,7 @@ Basic:
   uses: candis/kafka-actions@v0.0.2
   # Optionally input values can be provided as follows:
   with: 
-    kafka version: 3.2.0
+    kafka version: 3.7.1
     zookeeper version: 3.7.1
 
 ```
@@ -41,7 +41,7 @@ export INPUT_ZOOKEEPER_PORT=2181
 export INPUT_ZOOKEEPER_VERSION=3.7.1
 export INPUT_KAFKA_PORT=9092
 export INPUT_KAFKA_CLIENT_PORT=29092
-export INPUT_KAFKA_VERSION=3.2.0
+export INPUT_KAFKA_VERSION=3.7.1
 ```
 
 ---
